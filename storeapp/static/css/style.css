@@ -1,0 +1,218 @@
+
+body{
+    background-color: rgb(20, 13, 13);
+}
+/* NAVBAR   */
+
+
+.nav-bar{
+    height: 80px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: rgb(22, 17, 17);
+    
+    
+    
+}
+.small-img {
+    width: 100px;  
+    height: 100px;  
+    object-fit: cover;
+  }
+  
+
+.dropdown-menu{
+    background-color: rgb(118, 109, 109);
+    color: rgb(9, 4, 4);
+    
+    
+}
+.new-customer-dropdown{
+    position: relative;
+    left: 1000px;
+    bottom: 110px;
+}
+.login-dropdown{
+    position: relative;
+    left: 1020px;
+    bottom: 127px;
+}
+.dropdown-item{
+  background-color: rgb(118, 109, 109);
+  color: white;
+}
+
+.logo{
+    color: rgb(241, 234, 234);
+    margin-left: 595px;
+    margin-top: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+}
+
+.logo1{
+    color: red;
+    margin-left: 750px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    position: relative;
+    bottom: 55px;
+}
+.search-box{
+    width: 200px;
+    height: 30px;
+    /* border-radius: 15px; */
+    position: relative;
+    left: 100px;
+    bottom: 135px;
+    padding-left: 10px;
+} 
+.src-btn{
+    height: 30px;
+    width: 90px;
+    position: relative;
+    left: 103px;
+    bottom: 135px;
+    cursor: pointer;
+    
+    
+}
+.src-btn:hover{
+    background-color: rgb(11, 14, 13);
+    color: rgb(253, 249, 249);
+}
+
+
+.wishlist{
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left: 1200px;
+    bottom: 170px;
+}
+.wishlist:hover{
+    
+    cursor: pointer;
+    
+    
+}
+.my-account{
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left: 1250px;
+    bottom: 170px;
+}
+.my-cart{
+    height: 20px;
+    width: 20px;
+    position: relative;
+    left: 1305px;
+    bottom: 170px;
+
+}
+
+
+
+.carousel-item img {
+    margin: auto;
+    height: 600px;
+    width: 100%;
+    object-fit: cover; /* Optional: Adjusts the aspect ratio */
+}
+
+/* slide  */
+#Ro{
+    color: black;
+}
+#tisso{
+    color: black;
+
+    
+}
+/* SUB HEAD */
+.sub-head{
+    height: 100px;
+    width: 100%;
+    border: 1px solid rgb(194, 182, 182);
+    background-color: rgb(161, 159, 156);
+}
+
+.sub{
+    position: relative;
+    left: 610px;
+    top: 60px;
+    
+}
+.men{
+    color: black;
+    text-decoration: none;
+}
+.men:hover{
+    text-decoration: underline;
+}
+.women{
+    padding-left: 10px;
+    color: black;
+    text-decoration: none;
+}
+.women:hover{
+    text-decoration: underline;
+
+}
+.collection{
+    padding-left: 10px;
+    color: black;
+    text-decoration: none;
+}
+.collection:hover{
+    text-decoration: underline;
+}
+.new{
+    padding-left: 10px;
+    color: black;
+    text-decoration: none;
+}
+.new:hover{
+    text-decoration: underline;
+}
+/* This is the end of slide page ------------>*/
+
+
+
+/* Collection Pge Starts Here-----------> */
+
+.collection-page{
+    height: 1200px;
+    width: 100%;
+    background-color: rgb(20, 16, 16);
+}
+.coll{
+    text-align: center;
+    font-size: 40px;
+    color: rgb(10, 6, 6);
+    background-color: rgb(180, 175, 175);
+}
+
+
+.card  {
+    position: relative;
+    left:200px;
+    top: 70px;
+    background-color:rgb(170, 179, 180);
+    
+}
+
+
+
+
+
+
+.btn{
+    position: relative;
+    left: 20px;
+}
+
+/* footer------------------------------------------------------> */
+
+
