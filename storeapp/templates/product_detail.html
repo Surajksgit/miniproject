@@ -1,12 +1,11 @@
 <!-- product_detail.html -->
-{% extends 'base.html' %}
 
-{% block content %}
+
+
 <div class="product-detail">
     <h1>{{ product.name }}</h1>
-    <img src="{{ product.image.url }}" alt="{{ product.name }}">
-    <p>{{ product.description }}</p>
-    <p>Price: ${{ product.price }}</p>
+    <img style="height: 400px; width: 400px; margin-left: 500px;" src="{{ product.image.url }}" alt="{{ product.name }}"/>
+    <p style="font-size: 30px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{ product.description }}</p>
+    <p style="font-size: 40px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: bold;">Price: ${{ product.price }}</p>
     <!-- Add more product details here -->
 </div>
-{% endblock %}

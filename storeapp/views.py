@@ -6,6 +6,11 @@ from django.contrib import messages
 from django import template
 from .models import Products, Cart
 from django.http import JsonResponse
+from django.http import HttpResponse
+from reportlab.lib.pagesizes import letter
+from reportlab.lib import colors
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
 
 
 # Create your views here.
@@ -111,6 +116,43 @@ def remove_from_cart(request, cart_id):
     return JsonResponse({"success": True})
 
 
+# invoice...............................................................
+
+
+# Function to generate PDF invoice
+
+def generate_invoice_pdf(cart_items, total_price):
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="invoice.pdf"'
+
+    doc = SimpleDocTemplate(response, pagesize=letter)
+    elements = []
+
+    styles = getSampleStyleSheet()
+    elements.append(Paragraph("CHRONOGRAPH.in Invoice", styles['Title']))
+
+    data = [['Product', 'Quantity', 'Unit Price', 'Total']]
+    for item in cart_items:
+        data.append([item.product.name, item.quantity, f'${item.product.price}', f'${item.total_price()}'])
+
+    data.append(['', '', 'Grand Total', f'${total_price}'])
+
+    table = Table(data)
+    table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+    ]))
+
+    elements.append(table)
+    doc.build(elements)
+    return response
+
+
 
 # Checkout function
 def checkout(request):
@@ -118,7 +160,9 @@ def checkout(request):
     total_price = sum(item.total_price() for item in cart_items)
     
     if request.method == "POST":
+        response = generate_invoice_pdf(cart_items, total_price)
         cart_items.delete()  # Empty cart after checkout
         return redirect('home')
+        return response
 
     return render(request, 'checkout.html', {'total_price': total_price})

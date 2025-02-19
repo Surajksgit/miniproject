@@ -194,7 +194,7 @@
     <div id="collect" class="coll" >COLLECTION</div>
  <div>
       {% for product in products %}
-      <div class="card" style="width: 18rem; height: 28rem; margin-left: 80px; 
+      <div class="card" style="width: 18rem; height: 28rem; margin-left: 100px; 
       margin-top: 50px; display: inline-flex; " >
         <img src="{{ product.image.url }}" class="card-img-top " style="height: 200px; width: 200px; margin-left: 40px;" alt="{{ product.name }}">
         <div class="card-body">
@@ -204,7 +204,7 @@
             $ {{ product.price }}
           </span>
           <p class="card-text">{{ product.description }}</p>
-          <a href="#" onclick="addToCart('{{ product.name }}', '{{ product.image.url }}')" class="btn btn-dark">Add to cart</a>
+          <a href="{% url 'add_to_cart' product.id %}" onclick="addToCart('{{ product.name }}', '{{ product.image.url }}')" class="btn btn-dark">Add to cart</a>
           <a href="#" class="btn btn-warning">Shop Now</a>
           <a href="{% url 'product_detail' product.id %}" class="btn btn-secondary" style="position: relative; left: 70px; top: 10px;">View Details</a>
         </div>
