@@ -33,6 +33,7 @@ def Signupdetails(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         Signup(name=name, email=email, password=password).save()
+        return redirect('login')
     return render(request, 'signup.html')
     
 
@@ -48,6 +49,7 @@ def Logindetails(request):
         else:
             return render(request, 'login.html')
 
+# collection...............................................................
 
 def collection_view(request):
     # Fetch all products from the database

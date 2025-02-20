@@ -6,8 +6,10 @@ from . import views
 urlpatterns = [
     path("", views.homepage, name="home"),
     path("signup/", views.Signuppage, name="signup"),
+    path("signup/details/", views.Signupdetails, name="signupdetails"),
     path("collection/signup/", views.Signuppage, name="signup"),
     path("signup/login/", views.Loginpage, name="login"),
+    path("login/details/", views.Logindetails, name="logindetails"),
     path("collection/signup/login/", views.Loginpage, name="login"),
     path("collection/", views.collection_view, name='collection'),
     path('collection/search/', views.searchi, name="search"),

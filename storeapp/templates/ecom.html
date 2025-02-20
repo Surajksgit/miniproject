@@ -88,16 +88,16 @@
         <h2 id="chrono" class="logo">CHRONO</h2>
         <h2 id="graph" class="logo1">GRAPH</h2>
     
-      <!-- <div class="new-customer-dropdown"> -->
-        <!-- <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> -->
-          <!-- Signup/Login -->
-        <!-- </button> -->
-        <!-- <ul class="dropdown-menu">  -->
-          <!-- <li><a href="signup/" style="text-decoration: none;"><button class="dropdown-item" type="button">Signup</button></a></li> -->
+      <div class="new-customer-dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Signup/Login
+        </button>
+        <ul class="dropdown-menu"> 
+          <li><a href="signup/" style="text-decoration: none;"><button class="dropdown-item" type="button">Signup</button></a></li>
           <!-- <li><a style="text-decoration: none;"><button class="dropdown-item" type="button">Login</button></a></li> -->
           <!-- <li><button class="dropdown-item" type="button">Something else here</button></li> -->
-        <!-- </ul> -->
-      <!-- </div>   -->
+        </ul>
+      </div>  
         
       <form method="GET" action="{% url 'search' %}">
         <input class="search-box" placeholder="search..." value="{{ query }}" name="search">

@@ -78,7 +78,7 @@
 <body>
 
 
-   <form action="" method="POST" >
+   <form action="{% url 'signupdetails' %}" method="POST" >
         {% csrf_token %}
         <div class="signup-container">
         <h2>Sign up</h2>
@@ -86,7 +86,7 @@
         <input type="email" placeholder="Email" name="email" required>
         <input type="password" placeholder="Password" name="password" required>
         <a href="Signup"><button  type="submit">Sign Up</button></a>
-        <a href="login">Already have an account? Log In</a>
+        <a href="{% url 'login' %}">Already have an account? Log In</a>
         <div class="google-signup">
             <button type="button">Sign up with Google</button>
         </div>

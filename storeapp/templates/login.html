@@ -61,13 +61,13 @@
     </style>
 </head>
 <body>
-    <form action="" method="POST" >
+    <form action="{% url 'logindetails' %}" method="POST" >
         {% csrf_token %}
         <div class="login-container">
         <h2>LOGIN</h2>
         <input type="text" name="name" placeholder="USERNAME" required>
         <input type="password" name="password" placeholder="PASSWORD" required>
-        <a><button type="submit">LOGIN</button></a>
+        <a href="{% url 'collection' %}"><button type="submit">LOGIN</button></a>
         <a href="#">Forgot password?</a>
     </div>
 </form>
